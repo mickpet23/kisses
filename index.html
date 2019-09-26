@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kisses</title>
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+	<button>Add Day</button>
+	<div id='container'></div>
+
+
+	<script type="text/javascript">
+const divContainer = document.getElementById('container');
+const addDay = document.getElementsByTagName('button')[0];
+
+let dayArray = [];
+
+addDay.addEventListener('click', () => {
+	let div = document.createElement('div');
+	let h1Day = document.createElement('h1');
+	let h2TotalKisses = document.createElement('h2');
+	let buttonAddKiss = document.createElement('button');
+	buttonAddKiss.appendChild(document.createTextNode('Add Kiss'));
+
+	div.appendChild(h1Day);
+	div.appendChild(h2TotalKisses);
+	div.appendChild(buttonAddKiss);
+
+	divContainer.insertAdjacentElement('afterbegin', div);
+
+	//add new day
+	let newDay = '';
+	if (dayArray.length == 0) {
+		newDay = 'Monday';
+	} else if (dayArray[0].day == 'Monday') {
+		newDay = 'Tuesday';
+	} else if (dayArray[0].day == 'Tuesday') {
+		newDay = 'Wednesday';
+	} else if (dayArray[0].day == 'Wednesday') {
+		newDay = 'Thursday';
+	} else if (dayArray[0].day == 'Thursday') {
+		newDay = 'Friday';
+	} else if (dayArray[0].day == 'Friday') {
+		newDay = 'Saturday';
+	} else if (dayArray[0].day == 'Saturday') {
+		newDay = 'Sunday';
+	} else if (dayArray[0].day == 'Sunday') {
+		newDay = 'Monday';
+	}
+	h1Day.appendChild(document.createTextNode(newDay));
+
+	h2TotalKisses.appendChild(document.createTextNode('0/20'))
+
+	dayArray = [{
+		day: newDay,
+		kisses: 0
+	}].concat(dayArray);
+
+	//add kiss
+	buttonAddKiss.addEventListener('click', () => {
+		dayArray[0].kisses = dayArray[0].kisses + 1;
+		while (h2TotalKisses.firstChild) {
+			h2TotalKisses.removeChild(h2TotalKisses.firstChild);
+		}
+		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`));
+	})
+})		
+	</script>
+</body>
+</html>
