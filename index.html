@@ -55,6 +55,7 @@ addDay.addEventListener('click', () => {
 		day: newDay,
 		kisses: 0
 	}].concat(dayArray);
+	localStorage.setItem('kisses', JSON.stringify(dayArray));
 
 	//add kiss
 	buttonAddKiss.addEventListener('click', () => {
@@ -63,6 +64,7 @@ addDay.addEventListener('click', () => {
 			h2TotalKisses.removeChild(h2TotalKisses.firstChild);
 		}
 		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`));
+		localStorage.setItem('kisses', JSON.stringify(dayArray));
 	})
 })		
 	</script>
