@@ -2,3 +2,17 @@ body {
 	background: #5bd1d7;
 	text-align: center;
 }
+
+h2 {
+	font-size: 30px;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+button {
+	width: 200px;
+	height: 50px;
+	font-size: 30px;	
+}
