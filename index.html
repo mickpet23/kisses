@@ -41,7 +41,7 @@ if (localStorage.getItem('kisses')) {
 
 	h1Day.appendChild(document.createTextNode(dayArray[0].day));
 
-	h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`))
+	h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /15`))
 
 	//add kiss button
 	buttonAddKiss.addEventListener('click', () => {
@@ -49,7 +49,7 @@ if (localStorage.getItem('kisses')) {
 		while (h2TotalKisses.firstChild) {
 			h2TotalKisses.removeChild(h2TotalKisses.firstChild);
 		}
-		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`));
+		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /15`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
 	})
 
@@ -91,7 +91,7 @@ addDay.addEventListener('click', () => {
 	}
 	h1Day.appendChild(document.createTextNode(newDay));
 
-	h2TotalKisses.appendChild(document.createTextNode('0/20'))
+	h2TotalKisses.appendChild(document.createTextNode('0/15'))
 
 	dayArray = [{
 		day: newDay,
@@ -105,7 +105,7 @@ addDay.addEventListener('click', () => {
 		while (h2TotalKisses.firstChild) {
 			h2TotalKisses.removeChild(h2TotalKisses.firstChild);
 		}
-		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`));
+		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /15`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
 	})
 })		
