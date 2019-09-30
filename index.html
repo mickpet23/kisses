@@ -70,7 +70,7 @@ if (localStorage.getItem('kisses')) {
 		while (h2TotalHandHolds.firstChild) {
 			h2TotalHandHolds.removeChild(h2TotalHandHolds.firstChild);
 		}
-		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /15`));
+		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /2`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
 	})		
 
@@ -144,7 +144,7 @@ addDay.addEventListener('click', () => {
 		while (h2TotalHandHolds.firstChild) {
 			h2TotalHandHolds.removeChild(h2TotalHandHolds.firstChild);
 		}
-		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /15`));
+		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /2`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
 	})	
 })		
