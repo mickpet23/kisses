@@ -39,12 +39,14 @@ if (localStorage.getItem('kisses')) {
 	let h2TotalHandHolds = document.createElement('h2');
 	let buttonAddHoldHand = document.createElement('button');
 	buttonAddHoldHand.appendChild(document.createTextNode('Add H.H.'));
+	let p = document.createElement('p');
 
 	div.appendChild(h1Day);
 	div.appendChild(h2TotalKisses);
 	div.appendChild(buttonAddKiss);
 	div.appendChild(h2TotalHandHolds);
 	div.appendChild(buttonAddHoldHand);	
+	div.appendChild(p);
 
 	divContainer.insertAdjacentElement('afterbegin', div);
 
@@ -53,6 +55,8 @@ if (localStorage.getItem('kisses')) {
 	h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /15`))
 
 	h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /2`))	
+
+	p.appendChild(document.createTextNode(dayArray[0].task));
 
 	//add kiss button
 	buttonAddKiss.addEventListener('click', () => {
