@@ -87,12 +87,14 @@ addDay.addEventListener('click', () => {
 	let h2TotalHandHolds = document.createElement('h2');
 	let buttonAddHoldHand = document.createElement('button');
 	buttonAddHoldHand.appendChild(document.createTextNode('Add H.H.'));
+	let p = document.createElement('p');
 
 	div.appendChild(h1Day);
 	div.appendChild(h2TotalKisses);
 	div.appendChild(buttonAddKiss);
 	div.appendChild(h2TotalHandHolds);
 	div.appendChild(buttonAddHoldHand);
+	div.appendChild(p);
 
 	divContainer.insertAdjacentElement('afterbegin', div);
 
@@ -100,6 +102,7 @@ addDay.addEventListener('click', () => {
 	let newDay = '';
 	if (dayArray.length == 0) {
 		newDay = 'Monday';
+		p.appendChild(document.createTextNode('Vacuum/laundry/stove/bathtub/toilet/Monthsiversary'));
 	} else if (dayArray[0].day == 'Monday') {
 		newDay = 'Tuesday';
 	} else if (dayArray[0].day == 'Tuesday') {
