@@ -100,30 +100,31 @@ addDay.addEventListener('click', () => {
 
 	//add new day
 	let newDay = '';
+	let task = '';
 	if (dayArray.length == 0) {
 		newDay = 'Monday';
-		p.appendChild(document.createTextNode('Vacuum/laundry/stove/bathtub/toilet/Monthsiversary'));
+		task = 'Vacuum/laundry/stove/bathtub/toilet/Monthsiversary';
 	} else if (dayArray[0].day == 'Monday') {
 		newDay = 'Tuesday';
-		p.appendChild(document.createTextNode('Call Mom'));		
+		task = 'Call Mom';
 	} else if (dayArray[0].day == 'Tuesday') {
 		newDay = 'Wednesday';
-		p.appendChild(document.createTextNode('Shave'));		
+		task = 'Shave';
 	} else if (dayArray[0].day == 'Wednesday') {
 		newDay = 'Thursday';
-		p.appendChild(document.createTextNode('Contact Friends(High School and Brian Suh) and Call Dad'));		
+		task = 'Contact Friends(High School and Brian Suh) and Call Dad';
 	} else if (dayArray[0].day == 'Thursday') {
 		newDay = 'Friday';
-		p.appendChild(document.createTextNode('Long walk for Machomon'));
+		task = 'Long walk for Machomon';
 	} else if (dayArray[0].day == 'Friday') {
 		newDay = 'Saturday';
-		p.appendChild(document.createTextNode('Contact Cousins(Garrett, Brian, Kevin, Daniel, Win, Op, Mai Chi, Mai Que, Faith, etc)'));
+		task = 'Contact Cousins(Garrett, Brian, Kevin, Daniel, Win, Op, Mai Chi, Mai Que, Faith, etc)';
 	} else if (dayArray[0].day == 'Saturday') {
 		newDay = 'Sunday';
-		p.appendChild(document.createTextNode('Guitar, Sing, Piano'));
+		task = 'Guitar, Sing, Piano';
 	} else if (dayArray[0].day == 'Sunday') {
 		newDay = 'Monday';
-		p.appendChild(document.createTextNode('Vacuum/laundry/stove/bathtub/toilet/Monthsiversary'));
+		task = 'Vacuum/laundry/stove/bathtub/toilet/Monthsiversary';
 	}
 	h1Day.appendChild(document.createTextNode(newDay));
 
@@ -131,10 +132,13 @@ addDay.addEventListener('click', () => {
 
 	h2TotalHandHolds.appendChild(document.createTextNode('0/2'));
 
+	p.appendChild(document.createTextNode(task));
+
 	dayArray = [{
 		day: newDay,
 		kisses: 0,
-		handHolds: 0
+		handHolds: 0,
+		task: task
 	}].concat(dayArray);
 	localStorage.setItem('kisses', JSON.stringify(dayArray));
 
