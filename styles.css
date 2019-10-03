@@ -25,3 +25,7 @@ li {
 	font-size: 30px;
 	display: inline;
 }
+
+.lineThrough {
+	text-decoration: line-through;
+}

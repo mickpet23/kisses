@@ -108,7 +108,15 @@ addDay.addEventListener('click', () => {
 	if (dayArray.length == 0) {
 		newDay = 'Monday';
 		task = 'Vacuum/laundry/stove/bathtub/toilet/Monthsiversary';
+		
 		//implement new feature
+		let mondayTaskArray = [
+			{task: 'Vacuum/', lineThrough: false},
+			{task: 'laundry/', lineThrough: false},
+			{task: 'stove/', lineThrough: false},
+			{task: 'toilet/', lineThrough: false},
+			{task: 'Monthsiversary', lineThrough: false}
+		];
 		let ul = document.createElement('ul');
 		let li1 = document.createElement('li');
 		let li2 = document.createElement('li');
@@ -132,6 +140,13 @@ addDay.addEventListener('click', () => {
 		li4.appendChild(document.createTextNode('bathtub/'));
 		li5.appendChild(document.createTextNode('toilet/'));
 		li6.appendChild(document.createTextNode('Monthsiversary'));
+
+		li1.addEventListener('click', () => {
+			let answer = li1.classList.toggle('lineThrough');
+			console.log(answer);
+			mondayTaskArray[0].lineThrough = answer;
+			console.log(mondayTaskArray);
+		})
 
 	} else if (dayArray[0].day == 'Monday') {
 		newDay = 'Tuesday';
