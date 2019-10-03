@@ -20,3 +20,8 @@ button {
 p {
 	font-size: 30px;
 }
+
+li {
+	font-size: 30px;
+	display: inline;
+}

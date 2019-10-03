@@ -108,6 +108,31 @@ addDay.addEventListener('click', () => {
 	if (dayArray.length == 0) {
 		newDay = 'Monday';
 		task = 'Vacuum/laundry/stove/bathtub/toilet/Monthsiversary';
+		//implement new feature
+		let ul = document.createElement('ul');
+		let li1 = document.createElement('li');
+		let li2 = document.createElement('li');
+		let li3 = document.createElement('li');
+		let li4 = document.createElement('li');
+		let li5 = document.createElement('li');
+		let li6 = document.createElement('li');
+
+		ul.appendChild(li1);
+		ul.appendChild(li2);
+		ul.appendChild(li3);
+		ul.appendChild(li4);
+		ul.appendChild(li5);
+		ul.appendChild(li6);
+
+		div.appendChild(ul);
+
+		li.appendChild(document.createTextNode('Vacuum/'));
+		li.appendChild(document.createTextNode('laundry/'));
+		li.appendChild(document.createTextNode('stove/'));
+		li.appendChild(document.createTextNode('bathtub/'));
+		li.appendChild(document.createTextNode('toilet/'));
+		li.appendChild(document.createTextNode('Monthsiversary'));
+
 	} else if (dayArray[0].day == 'Monday') {
 		newDay = 'Tuesday';
 		task = 'Call Mom';
