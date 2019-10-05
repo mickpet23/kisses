@@ -39,6 +39,9 @@ if (localStorage.getItem('kisses')) {
 	let h2TotalHandHolds = document.createElement('h2');
 	let buttonAddHoldHand = document.createElement('button');
 	buttonAddHoldHand.appendChild(document.createTextNode('Add H.H.'));
+	let h2TotalHugs = document.createElement('h2');
+	let buttonAddHug = document.createElement('button');
+	buttonAddHug.appendChild(document.createTextNode('Add Hug'));	
 	let p = document.createElement('p');
 
 	div.appendChild(h1Day);
@@ -46,15 +49,19 @@ if (localStorage.getItem('kisses')) {
 	div.appendChild(buttonAddKiss);
 	div.appendChild(h2TotalHandHolds);
 	div.appendChild(buttonAddHoldHand);	
+	div.appendChild(h2TotalHugs);
+	div.appendChild(buttonAddHug);
 	div.appendChild(p);
 
 	divContainer.insertAdjacentElement('afterbegin', div);
 
 	h1Day.appendChild(document.createTextNode(dayArray[0].day));
 
-	h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`))
+	h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`));
 
-	h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /4`))	
+	h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /4`));
+
+	h2TotalHugs.appendChild(document.createTextNode(`${dayArray[0].hugs} /5`));		
 
 	p.appendChild(document.createTextNode(dayArray[0].task));
 
@@ -76,7 +83,17 @@ if (localStorage.getItem('kisses')) {
 		}
 		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /4`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
-	})		
+	})
+
+	//add hug
+	buttonAddHug.addEventListener('click', () => {
+		dayArray[0].hugs = dayArray[0].hugs + 1;
+		while (h2TotalHugs.firstChild) {
+			h2TotalHugs.removeChild(h2TotalHugs.firstChild);
+		}
+		h2TotalHugs.appendChild(document.createTextNode(`${dayArray[0].hugs} /5`));
+		localStorage.setItem('kisses', JSON.stringify(dayArray));
+	})				
 
 } else {
 	dayArray = [];
@@ -91,6 +108,9 @@ addDay.addEventListener('click', () => {
 	let h2TotalHandHolds = document.createElement('h2');
 	let buttonAddHoldHand = document.createElement('button');
 	buttonAddHoldHand.appendChild(document.createTextNode('Add H.H.'));
+	let h2TotalHugs = document.createElement('h2');
+	let buttonAddHug = document.createElement('button');
+	buttonAddHug.appendChild(document.createTextNode('Add Hug'));
 	let p = document.createElement('p');
 
 	div.appendChild(h1Day);
@@ -98,6 +118,8 @@ addDay.addEventListener('click', () => {
 	div.appendChild(buttonAddKiss);
 	div.appendChild(h2TotalHandHolds);
 	div.appendChild(buttonAddHoldHand);
+	div.appendChild(h2TotalHugs);
+	div.appendChild(buttonAddHug);
 	div.appendChild(p);
 
 	divContainer.insertAdjacentElement('afterbegin', div);
@@ -176,12 +198,15 @@ addDay.addEventListener('click', () => {
 
 	h2TotalHandHolds.appendChild(document.createTextNode('0/4'));
 
+	h2TotalHugs.appendChild(document.createTextNode('0/5'));
+
 	p.appendChild(document.createTextNode(task));
 
 	dayArray = [{
 		day: newDay,
 		kisses: 0,
 		handHolds: 0,
+		hugs: 0,
 		task: task
 	}].concat(dayArray);
 	localStorage.setItem('kisses', JSON.stringify(dayArray));
@@ -204,7 +229,17 @@ addDay.addEventListener('click', () => {
 		}
 		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /4`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
-	})	
+	})
+
+	//add hug
+	buttonAddHug.addEventListener('click', () => {
+		dayArray[0].hugs = dayArray[0].hugs + 1;
+		while (h2TotalHugs.firstChild) {
+			h2TotalHugs.removeChild(h2TotalHugs.firstChild);
+		}
+		h2TotalHugs.appendChild(document.createTextNode(`${dayArray[0].hugs} /5`));
+		localStorage.setItem('kisses', JSON.stringify(dayArray));
+	})		
 })		
 	</script>
 </body>
