@@ -52,9 +52,9 @@ if (localStorage.getItem('kisses')) {
 
 	h1Day.appendChild(document.createTextNode(dayArray[0].day));
 
-	h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /15`))
+	h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`))
 
-	h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /2`))	
+	h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /4`))	
 
 	p.appendChild(document.createTextNode(dayArray[0].task));
 
@@ -64,7 +64,7 @@ if (localStorage.getItem('kisses')) {
 		while (h2TotalKisses.firstChild) {
 			h2TotalKisses.removeChild(h2TotalKisses.firstChild);
 		}
-		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /15`));
+		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
 	})
 
@@ -74,7 +74,7 @@ if (localStorage.getItem('kisses')) {
 		while (h2TotalHandHolds.firstChild) {
 			h2TotalHandHolds.removeChild(h2TotalHandHolds.firstChild);
 		}
-		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /2`));
+		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /4`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
 	})		
 
@@ -118,6 +118,8 @@ addDay.addEventListener('click', () => {
 			{task: 'Monthsiversary', lineThrough: false}
 		];
 		let ul = document.createElement('ul');
+		div.appendChild(ul);
+
 		let li1 = document.createElement('li');
 		let li2 = document.createElement('li');
 		let li3 = document.createElement('li');
@@ -131,8 +133,6 @@ addDay.addEventListener('click', () => {
 		ul.appendChild(li4);
 		ul.appendChild(li5);
 		ul.appendChild(li6);
-
-		div.appendChild(ul);
 
 		li1.appendChild(document.createTextNode('Vacuum/'));
 		li2.appendChild(document.createTextNode('laundry/'));
@@ -172,9 +172,9 @@ addDay.addEventListener('click', () => {
 	}
 	h1Day.appendChild(document.createTextNode(newDay));
 
-	h2TotalKisses.appendChild(document.createTextNode('0/15'));
+	h2TotalKisses.appendChild(document.createTextNode('0/20'));
 
-	h2TotalHandHolds.appendChild(document.createTextNode('0/2'));
+	h2TotalHandHolds.appendChild(document.createTextNode('0/4'));
 
 	p.appendChild(document.createTextNode(task));
 
@@ -192,7 +192,7 @@ addDay.addEventListener('click', () => {
 		while (h2TotalKisses.firstChild) {
 			h2TotalKisses.removeChild(h2TotalKisses.firstChild);
 		}
-		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /15`));
+		h2TotalKisses.appendChild(document.createTextNode(`${dayArray[0].kisses} /20`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
 	})
 
@@ -202,7 +202,7 @@ addDay.addEventListener('click', () => {
 		while (h2TotalHandHolds.firstChild) {
 			h2TotalHandHolds.removeChild(h2TotalHandHolds.firstChild);
 		}
-		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /2`));
+		h2TotalHandHolds.appendChild(document.createTextNode(`${dayArray[0].handHolds} /4`));
 		localStorage.setItem('kisses', JSON.stringify(dayArray));
 	})	
 })		
